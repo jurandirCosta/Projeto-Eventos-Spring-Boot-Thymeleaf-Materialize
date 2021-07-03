@@ -1,0 +1,107 @@
+/* Lista de Eventos*/
+nav{
+	margin-left: 10px;
+	margin-right: 15px;
+	width: 100%;
+	
+}
+
+
+.nav .nav-wrapper{
+	margin-left: 10px;
+	margin-right: 0px;
+	
+}
+
+.nav-wrapper #2962ff blue accent-4{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 10px;
+}
+
+.nav .brand-logo{
+	margin-left: 10px;
+	margin-right: 10px;
+	
+}
+
+nav .brand-logo{
+	padding-left: 10px;
+	padding-right:10px;
+}
+
+th.left{
+	padding-right: 25px;
+}
+
+ /* Icone de exclusão */
+.center  {
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 12px;
+}
+
+
+
+/*detalhe evento  */
+
+.card-detalhe-geral{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px !important;
+}
+
+.row {
+	margin-bottom: 0px !important;
+}
+
+.row .col .s12{
+	padding-top: 0px;
+	margin-bottom: 0px !important;
+	padding: 0 !important;
+}
+
+.card .card-content {
+  margin-top: 0px !important;	
+  margin-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
+.center, .center-align {
+    text-align: center;
+    padding-top: 0px;
+}
+.fontevento{
+	font-size: 20px;
+}
+
+/* index */
+
+
+.botao-green{
+	width: 5px;
+}
+
+.botao-red{
+	width: 5px;
+}
+
+/* Evento */
+
+h5{
+  text-align: center;
+ 
+}
+
+
+h4 {
+	padding-left: 10px;
+}
+
+h3{
+	padding-right: 10px;
+}
+
+/* Cadastro de Convidados*/
+
+

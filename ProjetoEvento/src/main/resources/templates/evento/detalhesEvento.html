@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equip="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>EventosApp</title>
+      <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+      <link type="text/css" rel="stylesheet" th:href="@{materialize/css/materialize.min.css}"  media="screen,projection"/>
+	  <link type="text/css" rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css}"/>
+	  <link rel="stylesheet" th:href="@{materialize/css/styles.css}">
+
+</head>	  
+<body>
+	<div th:insert="~{navbar :: cabecalho}"></div>
+	
+	<th:block th:include="mensagemValidacao"></th:block>
+<div class="row">
+   <div class="col s12 card-detalhe-geral">
+	<div class="card ">
+		<div class="card-content bla-textck">
+			<div class="row">
+				<div class="col s12 l6"><h4>Cadastro de Convidados</h4></div>
+				<div class="col s12 l6">
+					<h5><a th:href="@{/listaEventos}" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></h5>
+				</div>	
+			</div>				
+			<div class="row">	
+				<div class="col s3 fontevento">
+				   <div class="card blue-grey darken-1">
+        			<div class="card-content white-text">
+          				<span class="card-title">Evento:</span>
+						<div th:each="evento : ${evento}">
+							<p> Nome: <span th:text="${evento.nome}"></span></p>
+							<p> Local: <span th:text="${evento.local}"></span></p>
+							<p> Data: <span th:text="${#dates.format(evento.data, 'dd/MM/yyyy')}"></span></p>
+							<p> Horário: <span th:text="${evento.horario}"></span></p>
+						</div>
+        				</div>	
+ 				    </div>	
+				</div>
+				<div class="col s6">
+				  <div class="card ">
+					<div class="card-content formConvidado">
+						<form action="#" method="POST" th:object="${convidado}"  th:action="@{/{codigo}(codigo=${evento.codigo})}" > 
+						
+							<input type="hidden" th:value="${codigo}" id="codigo" name="codigo"/>
+							
+							<div class="input-field col s8">
+								<input type="text" th:field="${nomeConvidado.}" id="nomeConvidado" name="nomeConvidado" />
+								<label for="nomeConvidado">Nome do Convidado</label>
+							</div>
+						
+							<div class="input-field col s4">
+								<input type="text"  th:value="${convidado.rg}" id="rg" name="rg"/>
+								<label for="rg">RG</label>
+							</div>
+						
+							
+							<div class="row">
+								<div class="col s9 offset-s2">
+								 <button type="submit" class="waves-effect waves-light btn right #2979ff blue accent-3">Adicionar Convidado</button>
+								</div>
+		
+					   	</form> 
+					   	</div>
+					</div>   	
+	 			</div> 
+	 			
+	 	<!--		<div class="col s6">
+				  <div class="card ">
+					<div class="card-content">
+			 			
+			 			<div class="container">
+							<form method="POST" >
+								Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
+								Rg: <input type="text" value=""  name="rg" placeholder="AA-00.000.000" />
+								<div class="row">
+								<div class="col s9 offset-s2">
+								 <button type="submit" class="waves-effect waves-light btn right #2979ff blue accent-3">Adicionar Convidado</button>
+								</div>
+							</form>
+						</div>
+					</div>
+	 			  </div>
+	 			</div>-->
+	 			
+	 			
+	 			
+	 		</div>
+	 	
+		 	<div class="row">
+	    		<div class="col s6 offset-s3">	   
+			 		<div class="card">
+			 		 	<div class="row">
+					 		<div class="card-content black-text center">
+ 						 		<span class="card-title #e0e0e0 grey lighten-2">Lista de Convidados</span>
+				 		 		
+						   <table class="responsive-table striped centered">
+								<thead>
+									<tr>
+										<th>Convidado</th>
+										<th>RG</th>
+										<th class="center">Ações</th>
+									</tr>
+							</thead>
+							<tbody>
+								<tr th:each="convidado : ${convidados}">
+									<td><span th:text="${convidado.nomeConvidado}"></span></td>
+									<td><span th:text="${convidado.rg}"></span></td>
+									<td class="botao-green" href=""><a><i class="material-icons green-text">update</i></a></td>
+									<td><a class="botao-red" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}">
+										<i class="material-icons red-text">delete</i></a></td>
+								</tr>
+								
+								<tr>
+							         <td colspan="2" th:if="${#lists.isEmpty(convidados)}">Nenhum convidado encontrado</td>
+								</tr>	
+	
+								
+								</tbody>
+							</table>
+							</div> 
+			  			</div>
+	  			</div>
+     		</div>
+  		</div>
+</div>
+ 	
+	<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" th:src="@{materialize/js/materialize.min.js}"></script>	
+</body>
+</html>

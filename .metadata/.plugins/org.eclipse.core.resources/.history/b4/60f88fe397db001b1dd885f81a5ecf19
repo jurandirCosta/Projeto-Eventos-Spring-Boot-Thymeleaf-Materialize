@@ -1,0 +1,5 @@
+package com.jura.evento.controller;
+
+public class EventoController {
+
+}
