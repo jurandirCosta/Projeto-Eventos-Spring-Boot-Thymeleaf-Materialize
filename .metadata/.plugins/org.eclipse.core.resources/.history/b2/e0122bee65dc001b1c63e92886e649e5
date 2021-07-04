@@ -36,7 +36,7 @@
 								<h4>Cadastro de Eventos</h4>
 							</div>
 							<div class="col s12 m6 l6">
-							<h5><a th:href="@{/eventos}" 
+							<h5><a th:href="@{/listaEventos}" 
 										class="waves-effect waves-light btn right #2979ff blue accent-3"><i
 											class="material-icons left">format_list_bulleted</i>Lista de Eventos</a>
 								</h5>
