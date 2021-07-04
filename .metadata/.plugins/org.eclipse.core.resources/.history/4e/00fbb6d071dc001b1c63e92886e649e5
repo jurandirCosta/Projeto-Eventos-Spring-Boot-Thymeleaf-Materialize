@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	  <title>Lista de Eventos</title>
+</head>	  
+
+	
+	<div th:insert="~{navbar :: cabecalho}"></div>
+  
+
+<div class="row">
+    <div class="col s12 ">
+      <div class="card">
+        <div class="card-content bla-textck"> 
+		  <div class="row">
+			<div class="col s10 m6 l6"><h3>Lista de Eventos</h3></div>
+			<div class="col s11 m6 l6">
+				<h3><a th:href="@{/eventos/novo}" class="waves-effect waves-light btn right #2979ff blue accent-3"><i class="material-icons left">add_circle_outline</i>Cadastrar Eventos</a></h3>
+			</div>		
+		  </div>
+	    <div class="card">
+		 <div class="card-content">
+		  <table class="responsive-table striped ">
+			<thead>
+				<tr>
+					<th class="center">Descrição</th>
+					<th>Local</th>
+					<th>Data</th>
+					<th>Horario</th>
+					<th></th>
+					<th class="left">Ações</th>
+				</tr>
+			</thead>
+				<tbody>
+					<tr th:each="evento : ${eventos}">
+						
+					<!--	<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>  -->
+						<td><a th:href="@{/{codigo}(codigo=${evento.codigo})}">
+						<span th:text="${evento.descricao}"></span></a></td>
+						<td><span th:text="${evento.local}"></span></td>
+						<td><span th:text="${#dates.format(evento.data, 'dd/MM/yyyy')}"></span></td>
+						<td><span th:text="${evento.horario}"></span></td>
+						<td class="right"><a class="botao-green" th:href="@{/editarEvento/{codigo}(codigo=${evento.codigo})}">
+							<i class="material-icons green-text">edit</i></a></td>
+	  					<td class="center"><a class="botao-red" th:href="@{/deletarEvento/{codigo}(codigo=${evento.codigo})}">
+							<i class="material-icons red-text center">delete</i></a></td>
+						</tr>
+						<tr>
+							<td colspan="4" th:if="${#lists.isEmpty(eventos)}">Nenhum evento encontrado</td>
+						</tr>	
+				</tbody>
+			</table>
+	     </div>
+	   </div>
+     </div>
+   </div>
+  </div>
+ </div>
+
+</html>

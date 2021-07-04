@@ -5,9 +5,6 @@
 	  layout:decorator="LayoutPadrao">
 <head>
 	  <title>Lista de Eventos</title>
-	  <div th:insert="~{LayoutPadrao :: estilos}"></div>
-
-	  
 </head>	  
 
 	

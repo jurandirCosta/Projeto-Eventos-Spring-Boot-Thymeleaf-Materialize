@@ -5,11 +5,8 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorator="LayoutPadrao">
 <head>
-	<title>Cadastro de Eventos</title>
 	<!--<title th:if="${evento.isNovo}">Cadastro de Eventos</title>
 	<title th:unless="${evento.isNovo}">Edição de Evento</title>-->
-	<div th:insert="~{LayoutPadrao :: estilos}"></div>
-	
 </head>
 
 	<div th:insert="~{navbar :: cabecalho}"></div>

@@ -6,7 +6,10 @@
 <head>
 	  <title>Lista de Eventos</title>
 	  <div th:insert="~{LayoutPadrao :: estilos}"></div>
-
+<!--	  <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+      <link type="text/css" rel="stylesheet" th:href="@{materialize/css/materialize.min.css}"  media="screen,projection"/>
+	  <link type="text/css" rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css}"/>
+	  <link rel="stylesheet" th:href="@{materialize/css/styles.css}">  -->
 	  
 </head>	  
 
