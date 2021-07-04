@@ -1,0 +1,8 @@
+// Toast
+const elemnsToast = document.querySelector("#toast");
+elemnsToast.addEventListener("click", () => {
+	const instanceToast = M.toast({
+		html: "Evento adicionado com sucesso!!!",
+		classes: "rounded"
+	})
+});

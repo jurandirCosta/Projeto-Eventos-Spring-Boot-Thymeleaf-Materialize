@@ -1,0 +1,19 @@
+// Toast
+const elemnsToast = document.querySelector("#toast");
+const instanceToast = () => {
+	M.toast({
+		html: "Evento adicionado com sucesso !!!",
+		classes: "rounded"
+	})
+}
+
+
+elemnsToast.addEventListener("click", () => {
+	instanceToast();
+	
+	
+	//const instanceToast = M.toast({
+	//	html: "Evento adicionado com sucesso!!!",
+	//	classes: "rounded"
+	//})
+});

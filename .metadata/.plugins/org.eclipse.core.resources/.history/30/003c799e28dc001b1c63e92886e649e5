@@ -1,0 +1,31 @@
+package com.jura.evento.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.jura.evento.model.Evento;
+import com.jura.evento.repository.EventoRepository;
+
+@Controller
+@RequestMapping("/eventos")
+public class EventoController {
+	
+	@Autowired
+	private EventoRepository eventoRepository;
+
+	@RequestMapping("/novo")
+	public String novo() {
+		return "CadastroEvento";   
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public ModelAndView salvar(Evento evento) {
+		eventoRepository.save(evento);
+		ModelAndView mv = new ModelAndView("CadastroEvento")
+		return mv;
+	}
+	
+}

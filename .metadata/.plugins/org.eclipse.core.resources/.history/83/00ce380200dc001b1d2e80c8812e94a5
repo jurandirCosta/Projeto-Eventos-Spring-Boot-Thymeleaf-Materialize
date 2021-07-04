@@ -1,0 +1,22 @@
+package com.jura.evento;
+
+import java.util.Locale;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.server.i18n.FixedLocaleContextResolver;
+
+@SpringBootApplication
+public class ProjetoEventoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProjetoEventoApplication.class, args);
+	}
+	
+	@Bean
+	public FixedLocaleContextResolver localeResolver() {
+		return new FixedLocaleContextResolver(new Locale("pt", "BR"));
+	}
+
+}

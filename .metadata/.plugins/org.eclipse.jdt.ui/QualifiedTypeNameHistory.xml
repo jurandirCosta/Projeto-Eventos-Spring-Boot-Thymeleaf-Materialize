@@ -8,4 +8,10 @@
     <fullyQualifiedTypeName name="javax.persistence.Id"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="com.jura.evento.repository.EventoRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.WebProperties.LocaleResolver"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties.LocaleResolver"/>
+    <fullyQualifiedTypeName name="org.springframework.web.server.i18n.FixedLocaleContextResolver"/>
 </qualifiedTypeNameHistroy>

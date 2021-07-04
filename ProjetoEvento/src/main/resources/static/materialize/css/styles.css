@@ -106,3 +106,24 @@ h3{
 /* Cadastro de Convidados*/
 
 
+/* Themes para Mensagens do Sistema*/
+
+/*--css do theme green */
+md-toast.md-green-theme .md-toast-content {
+  background-color: #62c462; /*--verde */
+}
+
+/*--css do theme red */
+md-toast.md-red-theme .md-toast-content{
+  background-color: #ee5f5b; /* --vermelho */
+}
+
+/*--css do theme orange */
+md-toast.md-orange-theme .md-toast-content{
+  background-color: #fb921a; /*--laranja */
+}
+
+/*--css do theme blue */
+md-toast.md-blue-theme .md-toast-content{
+  background-color: #0088cc; /*--azul */
+}

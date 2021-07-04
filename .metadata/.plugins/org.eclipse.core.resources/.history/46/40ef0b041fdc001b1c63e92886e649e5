@@ -1,0 +1,3 @@
+// Toast
+const elemnsToast = document.querySelector("#toast");
+

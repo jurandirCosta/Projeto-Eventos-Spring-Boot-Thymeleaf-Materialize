@@ -23,7 +23,9 @@
 
 	<br>
 	<div class="container">
-		<!-- <th:block th:include="mensagemValidacao"></th:block> -->
+	
+	 <th:block th:include="mensagemValidacao"></th:block> 		
+	 
 		<div class="row">
 			<div class="col s12 m8">
 
@@ -57,7 +59,7 @@
 								<label for="local"></label>
 							</div>
 							<div class="input-field col s6">
-								<input type="text" class="datepicker" name="dataEvento" 
+								<input type="text" class="datepicker" name="dataEvento" placeholder="dd/MM/yyyy"
 									id="dataEvento" />
 								<label for="dataEvento"></label>
 							</div>
@@ -70,7 +72,9 @@
 								<div class="col s9 offset-s2">
 									<a href="#"></a>
 									<button type="submit"
-										class="waves-effect waves-light btn right #2979ff blue accent-3">Salvar</button>
+										class="waves-effect waves-light btn right #2979ff blue accent-3" 
+										  >Salvar</button>
+										  
 								</div>
 							</div>
 						</form>
@@ -85,6 +89,7 @@
 
 	<!--JavaScript at end of body for optimized loading-->
 	<script type="text/javascript" th:src="@{materialize/js/materialize.min.js}"></script>
+	<script th:inline="javascript" type="text/javascript" th:src="@{materialize/js/main.js}"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			var elems = document.querySelectorAll('.datepicker');

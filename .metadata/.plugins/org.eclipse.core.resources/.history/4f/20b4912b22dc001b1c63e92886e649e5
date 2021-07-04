@@ -1,0 +1,28 @@
+// Toast
+const elemnsToast = document.querySelector("#toast");
+const instanceToast = () => {
+	M.toast({
+		html: "Evento adicionado com sucesso !!!",
+		classes: "rounded"
+	})
+}
+
+
+elemnsToast.addEventListener("click", () => {
+	instanceToast();
+	
+	
+	//const instanceToast = M.toast({
+	//	html: "Evento adicionado com sucesso!!!",
+	//	classes: "rounded"
+	//})
+});
+
+
+// Chamar Toast
+
+$mdToast.show(
+    $mdToast.simple()
+        .theme('green')//<-- Segunda parte do truque
+        .content('Registro salvo com sucesso')
+);

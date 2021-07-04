@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<div class="alert alert-sucess alert-dismissible" role="alert"
+			th:if="${not #strings.isEmpty(mensagem)}">
+		<span th:text="${mensagem}"></span>	
+	</div>
+	<div class="waves-effect waves-light btn right #2979ff blue accent-3" id="toast"
+			th:if="${not #strings.isEmpty(mensagem)}">
+		<span th:text="${mensagem}"></span>
+	</div>
+	
+</body>
+</html> 
