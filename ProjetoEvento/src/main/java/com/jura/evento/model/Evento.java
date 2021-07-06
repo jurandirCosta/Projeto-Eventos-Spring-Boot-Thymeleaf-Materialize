@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,13 +23,18 @@ public class Evento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
+	@NotEmpty(message = "Campo decrição deve ser preenchido")
 	private String descricao;
+	
+	@NotEmpty(message = "Campo local deve ser preenchido")
 	private String Local;
 	
+	@NotNull(message = "Campo data deve ser preenchido")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataEvento;
 	
+	@NotEmpty(message = "Campo horário deve ser preenchido")
 	private String horario;
 	
 /*	@OneToMany

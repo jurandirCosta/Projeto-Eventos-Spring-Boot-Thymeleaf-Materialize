@@ -6,13 +6,8 @@
 <head>
 	  <title>Lista de Eventos</title>
 	  <div th:insert="~{LayoutPadrao :: estilos}"></div>
-
-	  
 </head>	  
-
-	
-	<div th:insert="~{navbar :: cabecalho}"></div>
-  
+<div th:insert="~{navbar :: cabecalho}"></div>
 <section layout:fragment="conteudo">
 	<div class="row">
 	    <div class="col s12 ">
@@ -33,24 +28,25 @@
 						<th>Local</th>
 						<th>Data</th>
 						<th>Horario</th>
-						<th></th>
-						<th class="left">Ações</th>
+						<th>Ações</th>
 					</tr>
 				</thead>
 					<tbody>
 						<tr th:each="evento : ${eventos}">
 							
 						<!--	<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>  -->
-							<td><a th:href="@{/{codigo}(codigo=${evento.codigo})}">
+							<td><a th:href="@{/eventos/{codigo}(codigo=${evento.codigo})}">
 							<span th:text="${evento.descricao}"></span></a></td>
 							<td><span th:text="${evento.local}"></span></td>
-							<td><span th:text="${#dates.format(evento.data, 'dd/MM/yyyy')}"></span></td>
+							<td><span th:text="${{evento.dataEvento}}"></span></td>
 							<td><span th:text="${evento.horario}"></span></td>
-							<td class="right"><a class="botao-green" th:href="@{/editarEvento/{codigo}(codigo=${evento.codigo})}">
-								<i class="material-icons green-text">edit</i></a></td>
-		  					<td class="center"><a class="botao-red" th:href="@{/deletarEvento/{codigo}(codigo=${evento.codigo})}">
-								<i class="material-icons red-text center">delete</i></a></td>
-							</tr>
+							<td >
+								<a class="botao-green" th:href="@{/eventos/{codigo}(codigo=${evento.codigo})}">
+									<i class="material-icons green-text">edit</i></a>
+			  					<a class="botao-red" th:href="@{/eventos/{codigo}(codigo=${evento.codigo})}">
+									<i class="material-icons red-text center">delete</i></a>
+							</td>
+						</tr>
 							<tr>
 								<td colspan="4" th:if="${#lists.isEmpty(eventos)}">Nenhum evento encontrado</td>
 							</tr>	
@@ -63,4 +59,5 @@
 	  </div>
 	 </div>
 </section>
+<div th:insert="~{LayoutPadrao :: js}"></div>
 </html>

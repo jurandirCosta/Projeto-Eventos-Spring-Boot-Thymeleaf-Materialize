@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="javax.persistence.Id"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.persistence.Temporal"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
     <fullyQualifiedTypeName name="com.jura.evento.repository.EventoRepository"/>
@@ -14,4 +13,12 @@
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.WebProperties.LocaleResolver"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties.LocaleResolver"/>
     <fullyQualifiedTypeName name="org.springframework.web.server.i18n.FixedLocaleContextResolver"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.lang.NonNull"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Null"/>
+    <fullyQualifiedTypeName name="org.springframework.validation.Errors"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
+    <fullyQualifiedTypeName name="org.springframework.validation.annotation.Validated"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 </qualifiedTypeNameHistroy>

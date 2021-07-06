@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-BR"
-	  xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorator="LayoutPadrao">
 <head>
 	<title>Cadastro de Eventos</title>
 	<!--<title th:if="${evento.isNovo}">Cadastro de Eventos</title>
 	<title th:unless="${evento.isNovo}">Edição de Evento</title>-->
-	<div th:insert="~{LayoutPadrao :: estilos}"></div>
+	
+	  <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
+      <link type="text/css" rel="stylesheet" th:href="@{materialize/css/materialize.min.css}"  media="screen,projection"/>
+	  <link type="text/css" rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css}"/>
+	  <link rel="stylesheet" th:href="@{materialize/css/styles.css}">
 	
 </head>
-
-	<div th:insert="~{navbar :: cabecalho}"></div>
+<div th:insert="~{navbar :: cabecalho}"></div>
 <section layout:fragment="conteudo">
 	<br>
 	<div class="container">
-	
-	 <th:block th:include="mensagemValidacao"></th:block> 		
-	 
+	  
 		<div class="row">
 			<div class="col s12 m8">
 
@@ -26,49 +26,43 @@
 					<div class="card-content">
 						<div class="row">
 							<div class="col s12 m6 l6">
-								<h4>Cadastro de Eventos</h4>
+								<h5>Cadastro de Eventos</h5>
 							</div>
 							<div class="col s12 m6 l6">
-							<h5><a th:href="@{/eventos}" 
-										class="waves-effect waves-light btn right #2979ff blue accent-3"><i
-											class="material-icons left">format_list_bulleted</i>Lista de Eventos</a>
-								</h5>
-							</div>
+							<h6><a th:href="@{/eventos}" 
+								class="waves-effect waves-light btn right #2979ff blue accent-3"><i
+									class="material-icons left">format_list_bulleted</i>Lista de Eventos</a>
+						</h6>
 						</div>
-
-						<form method="POST" th:object="${evento}" th:action="@{/eventos}">
-
-							
-						<!--	<input type="hidden" th:field="*{codigo}" /> -->
-
-							<div class="input-field col s12">
-								<input type="text"  name="descricao" id="descricao"
-									class="autocomplete" placeholder="Descrição do Evento" />
-								<label for="descricao"></label>
-							</div>
-							<div class="input-field col s12">
-								<input type="text" name="local"  id="local" class="autocomplete"
-									placeholder="Local" />
-								<label for="local"></label>
-							</div>
-							<div class="input-field col s6">
-								<input type="text" class="datepicker" name="dataEvento" placeholder="dd/MM/yyyy"
-									id="dataEvento" />
-								<label for="dataEvento"></label>
-							</div>
-							<div class="input-field col s6">
-								<input type="time" name="horario"  id="horario"
-									class="autocomplete" placeholder="Horário" />
-								<label for="horario"></label>
-							</div>
-							<div class="row">
-								<div class="col s9 offset-s2">
-									<a href="#"></a>
-									<button type="submit"
-										class="waves-effect waves-light btn right #2979ff blue accent-3" 
-										  >Salvar</button>
+						</div>
+						<form th:action="@{/eventos}" th:object="${evento}" method="POST">
+							<div th:include="Mensagem"></div>	
+								<input type="hidden" th:field="*{codigo}" name="codigo"/>
+								<div class="input-field col s12" >
+									<input type="text" id="descricao" name="descricao" th:field="*{descricao}"/>
+									<label for="descricao">Descrição do Evento</label>
 								</div>
-							</div>
+								<div class="input-field col s12"  >
+									<input type="text"  id="local" name="local" th:field="*{local}"/>
+									<label for="local">Local</label>
+								</div>
+								<div class="input-field col s6" >
+									<input type="text" 	id="dataEvento" name="dataEvento" th:field="*{dataEvento}"/>
+									<label for="dataEvento">dd/MM/yyyy</label>
+								</div>
+								<div class="input-field col s6" >
+									<input type="time"  id="horario" name="horario"
+										class="autocomplete" placeholder="Horário" th:field="*{horario}" />
+									<label for="horario"></label>
+								</div>
+								<div class="row">
+									<div class="col s9 offset-s2">
+									  <button type="submit"
+									  	class="waves-effect waves-light btn right #2979ff blue accent-3" 
+											  >Salvar</button>
+									</div>
+								</div>
+							
 						</form>
 					</div>
 				</div>
@@ -78,4 +72,21 @@
 	   </div>
 	 </div>
 </section>
+
+	<script type="text/javascript" th:src="@{materialize/js/materialize.min.js}"></script>	
+	<script type="text/javascript" th:src="@{materialize/js/jquery.min.js}"></script>
+	<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js}"></script>
+		<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var elems = document.querySelectorAll('.datepicker');
+			var instances = M.Datepicker.init(elems, options);
+		});
+
+		// Or with jQuery
+
+		$(document).ready(function () {
+			$('.datepicker').datepicker();
+		});
+	</script>
+
 </html>
